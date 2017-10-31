@@ -1,0 +1,10 @@
+<p>@Model["student"].GetDescription()</p>
+
+@foreach (var course in Model["course"])
+{
+  <p><a href = "/courses/@course.GetId()">@course.GetName()<a/></p>
+}
+
+
+<br>
+<a href="/Student/@Model["student"].GetId()/courses/new">Add Courses</a>

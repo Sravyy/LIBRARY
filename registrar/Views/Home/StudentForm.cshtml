@@ -1,0 +1,10 @@
+
+
+<form action='/Courses/@Model["course"].GetId()' method='post'>
+  <input id='course-id' name='course-id' type='hidden' value='@Model["course"].GetId()'>
+  <label for='inputStudent'>Enter Student</label>
+  <input id='inputStudent' name='inputStudent' type='text'>
+  <label for='inputDate'>Enter Due Date</label>
+  <input id='inputDate' name='inputDate' type='date'>
+  <button type='submit'>Add student</button>
+</form>
