@@ -1,0 +1,10 @@
+@foreach (var book in @Model)
+{
+<p>@book.Getcopies()      @book.GetTitlename()</p>
+}
+<br>
+<a href="/">Home</a>
+
+<form action="/Book/Delete" method="post">
+  <button type="submit" class="btn btn-success">Delete All Books</button>
+</form>

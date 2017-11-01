@@ -1,0 +1,7 @@
+
+<form action='/books/@Model["book"].GetId()' method='post'>
+  <input id='book-id' name='book-id' type='hidden' value='@Model["book"].GetId()'>
+  <label for='inputAuthor'>Enter Author</label>
+  <input id='inputAuthor' name='inputAuthor' type='text'>
+  <button type='submit'>Add Author</button>
+</form>

@@ -1,0 +1,26 @@
+<h3>Books by Author</h3>
+
+<p>Title: @Model["book"].GetTitlename()</p>
+<p>Number of copies: @Model["book"].Getcopies()</p>
+
+
+<p>Authors listed below</p>
+<ul>
+@foreach (var author in Model["author"])
+{
+
+  <li><a href = "/authors/@author.GetId()">@author.GetName()<a/></li>
+
+} <br>
+</ul>
+
+
+
+ <form action='/Authors/@Model["book"].GetId()/Checkout' method='post'>
+   <input id='date' name='date' type='date'>
+   <label for='inputBook'>Return Date</label>
+   <button type='submit'>Checkout</button></form>
+
+
+<br>
+<a href="/Book/@Model["book"].GetId()/authors/new">Add Authors</a>

@@ -1,0 +1,15 @@
+@foreach (var author in Model)
+{
+  <p><a href = "/authors/@author.GetId()">@author.GetName()</a></p>;
+}
+<form action="/Authors" method="post">
+  <label for="inputAuthor">Add another author:</label>
+  <input name="inputAuthor" class="form-control" id="inputAuthor">
+  <button type="submit" class="btn btn-success">Go.</button>
+</form>
+
+<form action="/Authors/Delete" method="post">
+  <button type="submit" class="btn btn-success">Delete All Authors</button>
+</form>
+
+<a href="/">Go home</a>

@@ -1,0 +1,34 @@
+
+<p>Author: @Model["author"].GetName()</p>
+<br>
+
+@if (@Model["books"].Count != 0)
+{
+  <ul>
+  @foreach (var book in @Model["books"])
+  {
+    <li><a href="/books/@book.GetId()">@book.GetTitlename()</a><br>
+    <p>Copies : @book.Getcopies()</li>
+  }
+  </ul>
+}
+
+
+<form action='/Authors/@Model["author"].GetId()' method='post'>
+  <input id='author-id' name='author-id' type='hidden' value='@Model["author"].GetId()'>
+  <label for='inputBook'>Enter Book</label>
+  <input id='inputBook' name='inputBook' type='text'>
+  <label for='inputDate'>Enter Number of Copies.</label>
+  <input id='inputDate' name='inputDate' type='number'>
+  <button type='submit'>Add book</button>
+</form>
+
+
+
+
+
+<form action="/Authors/@Model["author"].GetId()/Delete" method="post">
+  <button type="submit" class="btn btn-success">Delete This Author</button>
+</form>
+
+<a href="/Authors">View All Authors</a>
